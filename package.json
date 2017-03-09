@@ -1,0 +1,20 @@
+{
+  "name": "dfreedlaw",
+  "version": "1.0.0",
+  "description": "David Freed bankruptcy website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Benjamin Freed",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.1",
+    "gulp-webserver": "^0.9.1",
+    "uglify": "^0.1.5"
+  }
+}

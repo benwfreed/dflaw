@@ -1,0 +1,55 @@
+<p ng-show="!vm.goodSubmit" class="text-center">Provide me with your contact details and I will reach out to you by the next business day.</p>
+<br>
+<form ng-show="!vm.goodSubmit" class="form-vertical" role="form" name="registerForm" ng-submit="registerForm.$valid && vm.submit()" novalidate>
+  <div class="row row-content">
+ <!--FIRST NAME-->
+	<div class="form-group" ng-class="{ 'has-error' : registerForm.firstname.$error.required && registerForm.$submitted }">
+		<label for="firstname" class="col-sm-6 col-sm-offset-3 control-label">First Name</label><br>
+		<div class="col-sm-6 col-sm-offset-3">
+			<input type="text" class="form-control" name="firstname" 			ng-model="vm.register.firstName" required><br>
+			<span ng-show="registerForm.firstname.$error.required && 			registerForm.$submitted" class="help-block">Please enter a first name.</span>
+		</div>
+	</div>
+	<br>
+	<!--LAST NAME-->
+	<div class="form-group" ng-class="{ 'has-error' : registerForm.lastname.$error.required && registerForm.$submitted }">
+		<label for="lastname" class="col-sm-6 col-sm-offset-3 control-label">Last Name</label><br>
+		<div class="col-sm-6 col-sm-offset-3">
+			<input type="text" class="form-control" name="lastname" ng-model="vm.register.lastName" 			required><br>
+			<span ng-show="registerForm.lastname.$error.required && registerForm.$submitted" class="help-block">Please enter a last name.</span>
+		</div>
+	</div>
+	<br>
+  <!--PHONE-->
+  <div class="form-group" ng-class="{ 'has-error' : registerForm.phone.$error.required && registerForm.$submitted }">
+		<label for="lastname" class="col-sm-6 col-sm-offset-3 control-label">Phone Number</label><br>
+		<div class="col-sm-6 col-sm-offset-3">
+			<input type="text" class="form-control" name="phone" ng-model="vm.register.phone" ui-mask="(999) 999-9999" 			required><br>
+			<span ng-show="registerForm.phone.$error.required && registerForm.$submitted" class="help-block">Please enter a phone number.</span>
+		</div>
+	</div>
+	<br>
+
+  <!--Email-->
+  <div class="form-group">
+    <label for="lastname" class="col-sm-6 col-sm-offset-3 control-label">Email</label><br>
+    <div class="col-sm-6 col-sm-offset-3">
+      <input type="text" class="form-control" name="email" ng-model="vm.register.email"><br>
+    </div>
+  </div>
+  <br>
+
+  <!--END ROW CONTENT-->
+
+</div>
+
+  <!--SUBMIT-->
+  <br>
+  <div class="text-center">
+    <button ng-disabled="vm.loading" type="submit" class="btn btn-primary">Send<span ng-show="vm.loading">ing...</span><div class="text-center" ng-class="{loader: vm.loading}"></div></button>
+	</div>
+
+</form>
+
+<p class="text-center" ng-bind="vm.goodSubmit"></p>
+<div class="has-error"><p class="text-center help-block" ng-bind="vm.badSubmit"</p></div>
