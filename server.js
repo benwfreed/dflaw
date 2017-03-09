@@ -50,5 +50,5 @@ app.post('/',
   }
 );
 
-const listener = app.listen(process.env.PORT || 3000,
+const listener = app.listen(process.env.PORT || 8080,
   () => console.log('running on port ' + listener.address().port));
