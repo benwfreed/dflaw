@@ -4,6 +4,9 @@
     .config(configuration);
     configuration.$inject = ['$stateProvider', '$urlRouterProvider', 'uiGmapGoogleMapApiProvider'];
     function configuration($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
+      uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyAsstmro1STOxZJbVjBWQ2e3JO6FktR9OQ'
+      });
       $urlRouterProvider.otherwise('/');
       $stateProvider
         .state('home', {
